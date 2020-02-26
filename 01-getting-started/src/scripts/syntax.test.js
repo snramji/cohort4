@@ -13,4 +13,9 @@ test('Is this a string?', () => {
 test('Is this a boolean result?', () => {
     expect(functions.isBoolean(1, 1)).toBe(true);
     expect(functions.isBoolean(1, 2)).toBe(false);
+});
+
+test('Is this an array?', () => {
+    expect(functions.checkArray([1, 2, "abc"])).toBe(true);
+    expect(functions.checkArray(1)).toBe(false);
 })

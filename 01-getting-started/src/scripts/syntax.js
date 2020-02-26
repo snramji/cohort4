@@ -22,10 +22,18 @@ const functions = {
         }else{
             return false;
         }
-    }
-
+    },
 
     //     array
+
+    checkArray: (value) => {
+        if value.constructor === Array{
+            return true;
+        }else{
+            return false;
+        }    
+    }
+
     //     dictionary / objects
     //     undefined
 // sample if / else
