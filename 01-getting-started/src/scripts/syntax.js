@@ -2,40 +2,51 @@ const functions = {
 
 // define attributes / variables
 
-//     check if vlaue entered is a number
+    //     check if values are numbers
 
-    isNumber: (num) => {
-        return !isNaN(num);
+    checkNumber: (num1, num2) => {
+        return num1 * num2;
     },
 
-    //     check if value is a string
+    //     check if values are strings
 
-    isString: (str) => {
-        return isNaN(str);
+    checkString: (str1, str2) => {
+        return str1.concat(str2);
     },
 
-    //     check if result is boolean - true or false
+    // check if result is boolean - true or false
 
-    isBoolean: (var1, var2) => {
-        if ( var1 == var2) {
+    checkBoolean: (var1, var2) => {
+        if ( var1 === var2) {
             return true;
         }else{
             return false;
         }
     },
 
-    //     array
+    //     check if values entered are arrays
 
     checkArray: (value) => {
-        if value.constructor === Array{
+        return value.length;
+    },    
+
+    //     check if values entered are objects
+
+    checkObject: (obj) => {
+        return obj.firstName;
+    },
+
+    //     check if values entered are undefined
+
+    checkUndefined: (undef) => {
+        if (undef == undefined) {
             return true;
         }else{
             return false;
-        }    
+        }
     }
 
-    //     dictionary / objects
-    //     undefined
+
 // sample if / else
 // functions
 //     parameters
