@@ -16,6 +16,14 @@ const functions = {
         return num1 - num2;
     },
 
+    multiply: (num1, num2) => {
+        return num1 * num2;
+    },
+
+    divide: (num1, num2) => {
+        return num1 / num2;
+    },
+
     isEven: (num) => {
         if ( num % 2 == 0) {
             return 'Even Number';
