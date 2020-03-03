@@ -11,12 +11,29 @@ test('Check the sizes', () => {
     expect(functions.size(2000000)).toBe("extra large");
 });
 
+test('isEven test', () => {
+    expect(functions.isEven(1)).toBe('Odd Number');
+    expect(functions.isEven(2)).toBe('Even Number');
+});
+
+// Calculator Function Tests
+
 test('Does that add function work?', () => {
     expect(functions.add(1,2)).toBe(3);
     expect(functions.add(101,202)).toBe(303);
 });
 
-test('isEven test', () => {
-    expect(functions.isEven(1)).toBe('Odd Number');
-    expect(functions.isEven(2)).toBe('Even Number');
+test('Does that subtract function work?', () => {
+    expect(functions.subtract(2,1)).toBe(1);
+    expect(functions.subtract(200,100)).toBe(100);
+});
+
+test('Does that multiply function work?', () => {
+    expect(functions.multiply(2,3)).toBe(6);
+    expect(functions.multiply(50,100)).toBe(5000);
+});
+
+test('Does that divide function work?', () => {
+    expect(functions.divide(4,2)).toBe(2);
+    expect(functions.divide(50,0)).toBe(Infinity);
 });

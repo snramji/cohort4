@@ -1,0 +1,10 @@
+const functions = {
+    
+    convertToFarenheit: (temp) => {
+    (tempC = temp * (9/5) + 32);
+    console.log(tempC)
+    return tempC
+    }
+};
+
+export default functions;

@@ -8,6 +8,16 @@ const functions = {
         return "extra large";
     },
 
+    isEven: (num) => {
+        if ( num % 2 == 0) {
+            return 'Even Number';
+        }else{
+            return'Odd Number';
+        }
+    },
+
+    // Calculator Functions
+
     add: (num1, num2) => {
         return num1 + num2;
     },
@@ -24,13 +34,6 @@ const functions = {
         return num1 / num2;
     },
 
-    isEven: (num) => {
-        if ( num % 2 == 0) {
-            return 'Even Number';
-        }else{
-            return'Odd Number';
-        }
-    }
 };
 
 export default functions;
