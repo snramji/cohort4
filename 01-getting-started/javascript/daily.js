@@ -1,9 +1,7 @@
 const functions = {
-    
     convertToFarenheit: (temp) => {
-    (tempC = temp * (9/5) + 32);
-    console.log(tempC)
-    return tempC
+    console.log(temp * (9/5) + 32);
+    return temp * (9/5) + 32;
     }
 };
 

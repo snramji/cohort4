@@ -37,3 +37,11 @@ test('Does that divide function work?', () => {
     expect(functions.divide(4,2)).toBe(2);
     expect(functions.divide(50,0)).toBe(Infinity);
 });
+
+// Tax Calculator Function Tests
+
+test('Does the tax calculator work?', () => {
+    expect(functions.taxCalc(1)).toBe(0.15);
+    expect(functions.taxCalc(2)).toBe(0.3);
+    expect(functions.taxCalc(48535)).toBe(7280.25);
+})
