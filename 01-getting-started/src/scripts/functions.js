@@ -3,37 +3,30 @@ const functions = {
     
     // define attributes / variables
 
-    //     check if values are numbers
-    // check if values are numbers
+        // check if values are numbers
 
     checkNumber: (num1, num2) => {
         return num1 * num2;
     },
 
-    //     check if values are strings
-    // check if values are strings
+        // check if values are strings
 
     checkString: (str1, str2) => {
         return str1.concat(str2);
-@@ -24,47 +24,139 @@ const functions = {
-        }
     },
 
-    //     check if values entered are arrays
     // check if values entered are arrays
 
     checkArray: (value) => {
         return value.length;
     },    
 
-    //     check if values entered are objects
     // check if values entered are objects
 
     checkObject: (obj) => {
         return obj.firstName;
     },
 
-    //     check if values entered are undefined
     // check if values entered are undefined
 
     checkUndefined: (undef) => {
@@ -42,7 +35,6 @@ const functions = {
         }else{
             return false;
         }
-    }
     },
 
     // sample if / else
@@ -63,14 +55,6 @@ const functions = {
         return param1 + param2;
     },
 
-// sample if / else
-// functions
-//     parameters
-//     returns
-// arrays
-//     add to the front
-//     add to the end
-//     update values
     // add an element to the front of an array
 
     arrayAddFront: (item) => {
@@ -163,7 +147,7 @@ const functions = {
     sampleObjDict: (lastObject) => {
         console.log(lastObject.model);
         return lastObject.model;
-    }
+    },
 
 // Size Function
     
@@ -202,15 +186,17 @@ const functions = {
         return num1 / num2;
     },
 
-    
-
-// Tax Calculator
+    // Tax Calculator
 
     taxCalc: (taxIncome) => {
         if (taxIncome <= 48535);
-        console.log(taxIncome * 0.15);
-        return taxIncome * 0.15
-    }
+            console.log(taxIncome * 0.15);
+            return taxIncome * 0.15;
+        } else if (taxIncome >= 48536 && taxincome <= 97069) {
+            console.log(((taxIncome-48535)*0.205)+7280);
+            return ((taxIncome-48535)*0.205)+7280;
+        }       
+    },
 
 };
 

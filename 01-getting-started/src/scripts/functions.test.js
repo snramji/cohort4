@@ -1,5 +1,7 @@
 import functions from './functions'
 
+// Size Function Test
+
 test('Check the sizes', () => {
     expect(functions.size(-1)).toBe("small"); // Consider the edge cases
     expect(functions.size(0)).toBe("small");
@@ -10,6 +12,8 @@ test('Check the sizes', () => {
     expect(functions.size(100)).toBe("extra large");
     expect(functions.size(2000000)).toBe("extra large");
 });
+
+// Even Number Function Test
 
 test('isEven test', () => {
     expect(functions.isEven(1)).toBe('Odd Number');
@@ -44,4 +48,5 @@ test('Does the tax calculator work?', () => {
     expect(functions.taxCalc(1)).toBe(0.15);
     expect(functions.taxCalc(2)).toBe(0.3);
     expect(functions.taxCalc(48535)).toBe(7280.25);
+    
 })
