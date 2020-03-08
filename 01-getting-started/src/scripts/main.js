@@ -38,3 +38,16 @@ divide.addEventListener('click', (() => {
     console.log(num1, num2);
     document.getElementById("response").innerHTML = functions.divide(num1, num2);
 }));
+
+// Event Listener for Tax Calculator
+
+taxCalc.addEventListener('click', (() => {
+    let effTax = 0
+    let taxIncome = parseInt(document.getElementById('input1').value);
+    console.log(taxIncome);
+    document.getElementById("ouput1").innerHTML = functions.taxCalc(taxPayable);
+    console.log(taxPayable);
+    effTax = (taxPayable / taxIncome) * 100;
+    document.getElementById("ouput2").innerHTML = functions.taxCalc(effTax);
+    console.log(effTax);
+}));

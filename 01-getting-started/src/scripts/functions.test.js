@@ -45,8 +45,14 @@ test('Does that divide function work?', () => {
 // Tax Calculator Function Tests
 
 test('Does the tax calculator work?', () => {
-    expect(functions.taxCalc(1)).toBe(0.15);
-    expect(functions.taxCalc(2)).toBe(0.3);
-    expect(functions.taxCalc(48535)).toBe(7280.25);
-    
+    expect(functions.taxCalc(48535)).toBe(7280);
+    expect(functions.taxCalc(48536)).toBe(7280);
+    expect(functions.taxCalc(97069)).toBe(17229);
+    expect(functions.taxCalc(97070)).toBe(17230);
+    expect(functions.taxCalc(150473)).toBe(31115);
+    expect(functions.taxCalc(150474)).toBe(31115);
+    expect(functions.taxCalc(214368)).toBe(49645);
+    expect(functions.taxCalc(214369)).toBe(49645);
+    expect(functions.taxCalc(300000)).toBe(77904);
+    expect(functions.taxCalc(500000)).toBe(143904);
 })

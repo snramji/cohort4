@@ -189,18 +189,40 @@ const functions = {
     // Tax Calculator
 
     taxCalc: (taxIncome) => {
-        if (taxIncome <= 48535);
-            console.log(taxIncome * 0.15);
-            return taxIncome * 0.15;
-        } else if (taxIncome >= 48536 && taxincome <= 97069) {
-            console.log(((taxIncome-48535)*0.205)+7280);
-            return ((taxIncome-48535)*0.205)+7280;
-        }       
+        let intCalc = 0;
+        let taxPayable = 0;
+        if (taxIncome <= 48535) {
+            intCalc = taxIncome * 0.15;
+            taxPayable = Number(intCalc.toFixed(0));
+            console.log(taxPayable);
+            return taxPayable;
+        } else if (taxIncome >= 48536 && taxIncome <= 97069) {
+            intCalc = ((taxIncome-48535) * 0.205) + 7280;
+            taxPayable = Number(intCalc.toFixed(0));
+            console.log(taxPayable);
+            return taxPayable;
+        } else if (taxIncome >= 97070 && taxIncome <= 150473) {
+            intCalc = ((taxIncome-97069) * 0.26) + 17230;
+            taxPayable = Number(intCalc.toFixed(0));
+            console.log(taxPayable);
+            return taxPayable;
+        } else if (taxIncome >= 150474 && taxIncome <= 214368) {
+            intCalc = ((taxIncome-150473) * 0.29) + 31115;
+            taxPayable = Number(intCalc.toFixed(0));
+            console.log(taxPayable);
+            return taxPayable;
+        } else if (taxIncome >= 214369) {
+            intCalc = ((taxIncome-214368) * 0.33) + 49645;
+            taxPayable = Number(intCalc.toFixed(0));
+            console.log(taxPayable);
+            return taxPayable;
+        }    
+
+
+
     },
 
 };
 
 export default functions;
-
-
 
