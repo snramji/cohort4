@@ -6,24 +6,28 @@ const functions = {
         // check if values are numbers
 
     checkNumber: (num1, num2) => {
+        console.log(num1, num2);
         return num1 * num2;
     },
 
         // check if values are strings
 
     checkString: (str1, str2) => {
+        console.log(str1, str2);
         return str1.concat(str2);
     },
 
     // check if values entered are arrays
 
     checkArray: (value) => {
+        console.log(value.length);
         return value.length;
     },    
 
     // check if values entered are objects
 
     checkObject: (obj) => {
+        console.log(obj.firstName);
         return obj.firstName;
     },
 
@@ -31,8 +35,12 @@ const functions = {
 
     checkUndefined: (undef) => {
         if (undef == undefined) {
+            console.log(undef);
+            console.log(true);
             return true;
         }else{
+            console.log(undef);
+            console.log(false);
             return false;
         }
     },
@@ -41,8 +49,12 @@ const functions = {
 
     sampleIfElse: (sample1, sample2) => {
         if (sample1 > sample2) {
+            console.log(sample1, sample2);
+            console.log(true);
             return true;
         }else{
+            console.log(sample1, sample2);
+            console.log(false);
             return false;
         }
     },
@@ -52,27 +64,32 @@ const functions = {
     // returns
 
     sampleFunction: (param1, param2) => {
+        console.log(param1, param2);
+        console.log(param1 + param2);
         return param1 + param2;
     },
 
     // add an element to the front of an array
 
     arrayAddFront: (item) => {
-        item.unshift("Oranges");
+        item.unshift("oranges");
+        console.log(item);
         return item;
     },
 
     // add an element to the end of an array
 
     arrayAddBack: (item1) => {
-        item1.push("Oranges");
+        item1.push("oranges");
+        console.log(item1);
         return item1;
     },
 
     // update values of an array
 
     arrayUpdateValue: (item2) => {
-        item2[0] = "Oranges";
+        item2[0] = "oranges";
+        console.log(item2);
         return item2;
     },
 
@@ -81,7 +98,7 @@ const functions = {
     // sample 'for' loop
 
     sampleForLoop: (n) => {
-        var sum = 0;
+        let sum = 0;
         for (var i = 1; i <= n; i++) {
             sum += i;
         }

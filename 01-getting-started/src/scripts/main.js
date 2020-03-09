@@ -48,6 +48,6 @@ taxCalc.addEventListener('click', (() => {
     document.getElementById("ouput1").innerHTML = functions.taxCalc(taxPayable);
     console.log(taxPayable);
     effTax = (taxPayable / taxIncome) * 100;
-    document.getElementById("ouput2").innerHTML = functions.taxCalc(effTax);
+    document.getElementById("ouput2").innerHTML = effTax;
     console.log(effTax);
 }));
