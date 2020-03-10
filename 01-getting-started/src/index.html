@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
     <title>FSD</title>
 </head>
 
@@ -96,7 +97,41 @@
         <p id="idNumberSizexx"></p>
     </div>
 
-    <!-- Calculator -->
+    <!-- Simple Calculator -->
+    <div class="calculator">
+        <h1>Simple Two Number Calculator</h1>
+        <input class="input" type="number" id="input1" placeholder="Enter first number" display="Enter first number" name="Enter first number">
+        <input class="input" type="number" id="input2" placeholder="Enter second number" display="Enter second number" name="Enter second number">
+        <br><br>
+        <button type="button" id="add" class="operator">Add</button>
+        <button type="button" id="subtract" class="operator">Subtract</button>
+        <button type="button" id="multiply" class="operator">Multiply</button>
+        <button type="button" id="divide" class="operator">Divide</button>
+        <br><br>
+        <h2 id="response">The result is!</h2>
+        <script src="./scripts/main.js" type="module" ></script>
+    </div>
+    <br><br>
+
+    <!-- Tax Calculator -->
+
+    <div class="taxCalculator">
+        <h1>Canadian Federal Tax Calculator</h1>
+        <p>Enter Taxable Income ($)</p>
+        <input class="input" type="number" id="input1" placeholder="" display="" name="">
+        <br><br>
+        <button type="button" id="taxCalc" class="operator">Calculate</button>
+        <br><br>
+        <p>Federal Tax Payable ($)</p>
+        <div id="output1"></div>
+        <p>Effective Tax Rate (%)</p>
+        <div id="output2"></div>
+        <p>After Tax Income ($)</p>
+        <div id="output3"></div>
+        <script src="./scripts/main.js" type="module" ></script>
+    </div>
+    <br><br>
+
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">

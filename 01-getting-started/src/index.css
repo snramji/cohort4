@@ -76,3 +76,11 @@ html {
         min-height: 400px;
     }
 }
+
+.calculator {
+    text-align: center;
+}
+
+.taxCalculator {
+    text-align: center;
+}
