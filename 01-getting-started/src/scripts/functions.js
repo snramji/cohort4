@@ -202,7 +202,8 @@ const functions = {
         }  
         console.log(taxIncome);
         console.log(taxPayable);
-        return Number(taxPayable.toFixed(0));  
+        // return Number(taxPayable.toFixed(0));
+        return taxPayable;  
     }
 
 
