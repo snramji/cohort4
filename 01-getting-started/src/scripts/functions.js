@@ -200,6 +200,7 @@ const functions = {
         } else if (taxIncome >= 214369) {
             taxPayable = ((taxIncome-214368) * 0.33) + 49645;
         }  
+        console.log(taxIncome);
         console.log(taxPayable);
         return Number(taxPayable.toFixed(0));  
     }

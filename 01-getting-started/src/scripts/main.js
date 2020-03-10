@@ -8,39 +8,39 @@ import simCalc from './simcalc.js'
 
 // Event Listener for Size Function
 
-// idNumber.addEventListener('change', (() => {
-//     idNumberSize.textContent = functions.size(idNumber.value);
-// }));
+idNumber.addEventListener('change', (() => {
+    idNumberSize.textContent = functions.size(idNumber.value);
+}));
 
 // Event Listeners for Simple Calculator
 
-// add.addEventListener('click', (() => {
-//     let num1 = parseInt(document.getElementById('input1').value);
-//     let num2 = parseInt(document.getElementById('input2').value);
-//     console.log(num1, num2);
-//     document.getElementById("response").innerHTML = simCalc.add(num1, num2);
-// }));
+add.addEventListener('click', (() => {
+    let num1 = parseInt(document.getElementById('number1').value);
+    let num2 = parseInt(document.getElementById('number2').value);
+    console.log(num1, num2);
+    document.getElementById("response").innerHTML = simCalc.add(num1, num2);
+}));
 
-// subtract.addEventListener('click', (() => {
-//     let num1 = parseInt(document.getElementById('input1').value);
-//     let num2 = parseInt(document.getElementById('input2').value);
-//     console.log(num1, num2);
-//     document.getElementById("response").innerHTML = simCalc.subtract(num1, num2);
-// }));
+subtract.addEventListener('click', (() => {
+    let num1 = parseInt(document.getElementById('number1').value);
+    let num2 = parseInt(document.getElementById('number2').value);
+    console.log(num1, num2);
+    document.getElementById("response").innerHTML = simCalc.subtract(num1, num2);
+}));
 
-// multiply.addEventListener('click', (() => {
-//     let num1 = parseInt(document.getElementById('input1').value);
-//     let num2 = parseInt(document.getElementById('input2').value);
-//     console.log(num1, num2);
-//     document.getElementById("response").innerHTML = simCalc.multiply(num1, num2);
-// }));
+multiply.addEventListener('click', (() => {
+    let num1 = parseInt(document.getElementById('number1').value);
+    let num2 = parseInt(document.getElementById('number2').value);
+    console.log(num1, num2);
+    document.getElementById("response").innerHTML = simCalc.multiply(num1, num2);
+}));
 
-// divide.addEventListener('click', (() => {
-//     let num1 = parseInt(document.getElementById('input1').value);
-//     let num2 = parseInt(document.getElementById('input2').value);
-//     console.log(num1, num2);
-//     document.getElementById("response").innerHTML = simCalc.divide(num1, num2);
-// }));
+divide.addEventListener('click', (() => {
+    let num1 = parseInt(document.getElementById('number1').value);
+    let num2 = parseInt(document.getElementById('number2').value);
+    console.log(num1, num2);
+    document.getElementById("response").innerHTML = simCalc.divide(num1, num2);
+}));
 
 // Event Listener for Tax Calculator
 
