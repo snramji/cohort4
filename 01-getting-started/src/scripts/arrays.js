@@ -1,15 +1,35 @@
 // Logic for Working With Arrays
 
-let input_Array = [];
 const arrays = {     
     
-    arrayAdd: (inputArray) => {
-        inputArray.push(input_Array);
-        console.log(inputArray);
+    arrayAdd: (inputArray, itemOfArray) => {
+        inputArray.push(itemOfArray);
         return inputArray;
     },
 
-};
+    arrayShow: (inputArray) => {
+        // console.log(inputArray);
+        return inputArray;
+        // console.log("" + inputArray);
+        // return "" + inputArray;
+    },
 
+    arrayTotal: (inputArray) => {
+        let sum = 0;
+        inputArray.forEach(mySumArray);
+        function mySumArray(item) {
+            sum += parseInt(item);
+        }
+        console.log(sum)
+        return sum;
+    },
+
+    arrayClear: (inputArray) => {
+        inputArray = [];
+        // console.log(inputArray);
+        return inputArray;
+    }
+
+};
 
 export default arrays;

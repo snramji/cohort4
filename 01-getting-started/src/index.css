@@ -79,8 +79,28 @@ html {
 
 .calculator {
     text-align: center;
+    border: solid;
+    border-radius: 15px;
+    background-color: rgb(235, 240, 243);
 }
 
 .taxCalculator {
     text-align: center;
+    border: solid;
+    border-radius: 15px;
+    background-color: rgb(235, 240, 243);
+}
+
+.workingArrays {
+    text-align: center;
+    border: solid;
+    border-radius: 15px;
+    background-color: rgb(235, 240, 243);
+}
+
+.workingDictionaries {
+    text-align: center;
+    border: solid;
+    border-radius: 15px;
+    background-color: rgb(235, 240, 243);
 }

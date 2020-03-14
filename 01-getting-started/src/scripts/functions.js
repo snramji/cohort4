@@ -166,15 +166,6 @@ const functions = {
         return lastObject.model;
     },
 
-// Size Function
-    
-    size: (num) => {
-        if (num < 10) return "small";
-        if (num < 20) return "medium";
-        if (num < 100) return "large";
-        return "extra large";
-    },
-
 // Even Number Function
 
     isEven: (num) => {
@@ -184,6 +175,40 @@ const functions = {
             return'Odd Number';
         }
     },
+// Size Function
+    
+    size: (num) => {
+        if (num < 10) return "small";
+        if (num < 20) return "medium";
+        if (num < 100) return "large";
+        return "extra large";
+    },
+
+// // // Calculator Functions -- see file simcalc.js
+
+//     simCalc: (num1, num2) => {
+
+//         add: (num1, num2) => {
+//             console.log(num1 + num2);
+//             return num1 + num2;
+//         },
+
+//         subtract: (num1, num2) => {
+//             console.log(num1 - num2);
+//             return num1 - num2;
+//         },
+
+//         multiply: (num1, num2) => {
+//             console.log(num1 * num2);
+//             return num1 * num2;
+//         },
+
+//         divide: (num1, num2) => {
+//             console.log(num1 / num2);
+//             return num1 / num2;
+//         },
+
+//     },
 
 // Tax Calculator
 
@@ -202,14 +227,46 @@ const functions = {
         }  
         console.log(taxIncome);
         console.log(taxPayable);
-        // return Number(taxPayable.toFixed(0));
-        return taxPayable;  
-    }
+        return Number(taxPayable.toFixed(0));
+        // return taxPayable;  
+    },
+
+// Logic for Working With Arrays -- see file arrays.js
+
+    // const arrays = {     
+        
+    //     arrayAdd: (inputArray, itemOfArray) => {
+    //         inputArray.push(itemOfArray);
+    //         return inputArray;
+    //     },
+
+    //     arrayShow: (inputArray) => {
+    //         // console.log(inputArray);
+    //         return inputArray;
+    //         // console.log("" + inputArray);
+    //         // return "" + inputArray;
+    //     },
+
+    //     arrayTotal: (inputArray) => {
+    //         let sum = 0;
+    //         inputArray.forEach(mySumArray);
+    //         function mySumArray(item) {
+    //             sum += parseInt(item);
+    //         }
+    //         console.log(sum)
+    //         return sum;
+    //     },
+
+    //     arrayClear: (inputArray) => {
+    //         inputArray = [];
+    //         // console.log(inputArray);
+    //         return inputArray;
+    //     },
 
 
+    // },
 
-
-};
+}
 
 export default functions;
 
