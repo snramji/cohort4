@@ -2,6 +2,7 @@ import functions from './functions.js'
 import simCalc from './simcalc.js'
 // import taxCalculation from './taxcalc.js'
 import arrays from './arrays.js'
+import dictionaries from './dictionaries.js'
 
 
 // **********
@@ -88,9 +89,23 @@ import arrays from './arrays.js'
 
 // Event Listener For Working With Dictionaries
 
-        lookupDictionary.addEventListener('click',(() => {
-
+        // let provinces = {};
+        
+        submitDictEntry.addEventListener('click', (() => {
+            let codeProv = document.getElementById('inputProvCode').value;
+            let nameProv = document.getElementById('inputProvName').value;
+            console.log(codeProv, nameProv);
+            dictionaries.dictObjAdd(codeProv, nameProv);
         }));
+
+        lookupDictEntry.addEventListener('click', (() => {
+            let lookupCodeProv = document.getElementById("enterProvCode").value;
+            console.log(lookupCodeProv);
+            dictionaries.dictObjGet(lookupCodeProv);
+            document.getElementById("msgDictionary").innerHTML = dictionaries.dictObjGet(lookupCodeProv);
+        }));
+
+
 
 
 
