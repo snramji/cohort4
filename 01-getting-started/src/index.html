@@ -92,8 +92,8 @@
     </div>
 
     <div class="w3-content w3-container w3-padding-64 w3-center" id="idSize">
-        Did you know that =>
-        <input id="idNumber" type="number"> is a <span id="idNumberSize">unknown</span> number?
+        The size entered ==>
+        <input id="idNumber" type="number"> <== is <span id="idNumberSize">unknown</span> !
         <p id="idNumberSizexx"></p>
     </div>
 
@@ -155,9 +155,14 @@
 
     <div class="workingDictionaries">
         <h1>Working With Dictionaries</h1>
-        <input class="input" type="text" id="inputDictionary" placeholder="Enter Prov. 2-Ltr Abbrev." display="" name="">
+        <input class="input" type="text" id="inputProvCode" placeholder="Enter Province Code" display="" name="">
+        <input class="input" type="text" id="inputProvName" placeholder="Enter Province Name" display="" name="">
         <br><br>
-        <button type="button" id="lookupDictionary" class="operator">Lookup</button>
+        <button type="button" id="submitDictEntry" class="operator">Submit</button>
+        <br><br>        
+        <input class="input" type="text" id="enterProvCode" placeholder="Enter Code to Get Name" display="" name="">
+        <br><br>
+        <button type="button" id="lookupDictEntry" class="operator">Lookup</button>
         <br><br>
         <p>Message Area</p>
         <div id="msgDictionary" class="msgArea"></div>

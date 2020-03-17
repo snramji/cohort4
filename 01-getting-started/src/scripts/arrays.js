@@ -8,10 +8,7 @@ const arrays = {
     },
 
     arrayShow: (inputArray) => {
-        // console.log(inputArray);
         return inputArray;
-        // console.log("" + inputArray);
-        // return "" + inputArray;
     },
 
     arrayTotal: (inputArray) => {
@@ -26,7 +23,6 @@ const arrays = {
 
     arrayClear: (inputArray) => {
         inputArray = [];
-        // console.log(inputArray);
         return inputArray;
     }
 

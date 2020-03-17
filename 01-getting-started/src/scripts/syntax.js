@@ -1,4 +1,4 @@
-const functions = {
+const synFunctions = {
 
 // define attributes / variables
 
@@ -160,4 +160,4 @@ const functions = {
 
 }
 
-export default functions;
+export default synFunctions;
