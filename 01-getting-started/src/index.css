@@ -48,6 +48,7 @@ html {
 .bgimg-2 {
     /* background-image: url("https://www.w3schools.com/w3images/parallax2.jpg"); */
     background-image: url("https://cdn.pixabay.com/photo/2016/11/19/15/32/code-1839877_960_720.jpg");
+    /* background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freecreatives.com%2Fprint%2Ffree-images-for-websites.html&psig=AOvVaw0blu32a4NhwO37UHKKIww4&ust=1584725130153000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCsp7eHp-gCFQAAAAAdAAAAABAE") */
     min-height: 400px;
     opacity: 0.5;
 }
@@ -77,30 +78,37 @@ html {
     }
 }
 
+.size {
+    text-align: center;
+    border: solid;
+    /* border-radius: 15px; */
+    background-color: rgb(235, 240, 243);
+}
+
 .calculator {
     text-align: center;
     border: solid;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background-color: rgb(235, 240, 243);
 }
 
 .taxCalculator {
     text-align: center;
     border: solid;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background-color: rgb(235, 240, 243);
 }
 
 .workingArrays {
     text-align: center;
     border: solid;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background-color: rgb(235, 240, 243);
 }
 
 .workingDictionaries {
     text-align: center;
     border: solid;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background-color: rgb(235, 240, 243);
 }
