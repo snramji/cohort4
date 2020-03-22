@@ -36,13 +36,16 @@ showbutton.addEventListener("click", showListAfterClick);
 // Add Item At End Of List 
 
 let addbutton = document.getElementById("buttonAdd");
-let nextitem = document.createElement("li");
-let list = document.querySelector("ol");
-let orderlist = document.getElementsByTagName("ol");
+
+
 
 addbutton.addEventListener("click", addListAfterClick);
 
     function addListAfterClick() {
+
+        let orderlist = document.getElementsByTagName("ol");
+        let nextitem = document.createElement("li");
+        let list = document.querySelector("ol");
 
         // console.log("ADD BUTTON CLICKED");
         // console.log(orderlist);
@@ -61,10 +64,12 @@ deletebutton.addEventListener("click", removeItemAfterClick);
 
     function removeItemAfterClick() {
 
+        let list = document.querySelector("ol");
+        
         // console.log("DELETE BUTTON CLICKED");
 
         list.removeChild(list.lastElementChild);
-        list.removeChild(list.firstElementChild);
+        // list.removeChild(list.firstElementChild);
    
     };
 
