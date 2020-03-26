@@ -1,4 +1,4 @@
-import domfunctions from './domfunctions.js'
+// import domfunc from './domfunctions.js'
 
 
 // Tests for DOM Functions //

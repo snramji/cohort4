@@ -46,3 +46,68 @@ p, span {
 .button {
     text-align: center;
 }
+
+.cardPanels {
+    display: table;
+    width: 100%;
+    /* border: solid; */
+}
+
+.leftPanel {
+    display: table-cell;
+    /* float: left; */
+    vertical-align: middle;
+    margin: auto;
+    width: 50%;
+    font-size: 1rem;
+    height: 100%;
+    border: solid;
+    background-color: #c7dfcf;
+    color: rgb(41, 39, 39);
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 30px;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+.rightPanel {
+    display: table-cell;
+    /* float: left; */
+    vertical-align: middle;
+    margin: auto;
+    width: 50%;
+    font-size: 1rem;
+    height: 100%;
+    border: solid;
+    background-color: #c7dfcf;
+    color: rgb(41, 39, 39);
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+
+.card {
+    vertical-align: middle;
+    margin: auto;
+    width: 40%;
+    font-size: 1rem;
+    height: 100%;
+    border: solid;
+    background-color: #e7f0ea;
+    color: rgb(41, 39, 39);
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 30px;
+}
+

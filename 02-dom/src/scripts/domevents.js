@@ -1,4 +1,4 @@
-// import domfunctions from './domfunctions.js'
+// import domfunc from './domfunctions.js'
 
 // DOM Event Listeners //
 
@@ -19,7 +19,6 @@ let showbutton = document.getElementById("buttonShow");
 let showlist = document.getElementById("itemList");
 showlist.style.display = "none";
 
-
 showbutton.addEventListener("click", showListAfterClick);
 
     function showListAfterClick() {
@@ -37,13 +36,11 @@ showbutton.addEventListener("click", showListAfterClick);
 
 let addbutton = document.getElementById("buttonAdd");
 
-
-
 addbutton.addEventListener("click", addListAfterClick);
 
     function addListAfterClick() {
 
-        let orderlist = document.getElementsByTagName("ol");
+        // let orderlist = document.getElementsByTagName("ol");
         let nextitem = document.createElement("li");
         let list = document.querySelector("ol");
 
@@ -71,6 +68,41 @@ deletebutton.addEventListener("click", removeItemAfterClick);
         list.removeChild(list.lastElementChild);
         // list.removeChild(list.firstElementChild);
    
+    };
+
+
+// Working With Cards
+
+// Build Card
+
+function buildNewCard(text) {
+
+    let newCard = document.createElement("div");
+    newCard.appendChild(document.createTextNode(text));
+
+    let addBeforeButton = document.createElement('button');
+    addBeforeButton.appendChild(document.createTextNode("Add Before"));
+
+    let addAfterButton = document.createElement('button');
+    addAfterButton.appendChild(document.createTextNode("Add After"));
+
+    return newCard;
+
+};
+
+// Add Card Below
+
+let addNewCard = document.getElementById("addCard");
+
+addNewCard.addEventListener("click", addCardBelow);
+
+    function addCardBelow() {
+     
+        console.log("ADD BUTTON CLICKED");
+
+        
+
+
     };
 
 

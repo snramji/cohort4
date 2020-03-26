@@ -1,11 +1,12 @@
 // DOM Functions //
 
-const domfunctions = {
+const domfunc = {
 
-// Show list function
+// Show list items function
 
-   showListAfterClick(e) {
-        console.log("BUTTON CLICKED");
+   showListAfterClick ('click') {
+        // console.log("SHOW BUTTON CLICKED");
+        console.log("abc");
     }
 
 
@@ -19,4 +20,4 @@ const domfunctions = {
 
 
 
-export default domfunctions;
+export default domfunc;
