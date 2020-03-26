@@ -1,4 +1,4 @@
-// import domfunc from './domfunctions.js'
+import domfunc from './domfunctions.js'
 
 // DOM Event Listeners //
 
@@ -21,16 +21,16 @@ showlist.style.display = "none";
 
 showbutton.addEventListener("click", showListAfterClick);
 
-    function showListAfterClick() {
+    // function showListAfterClick() {
         
-        // console.log("SHOW BUTTON CLICKED");
+    //     // console.log("SHOW BUTTON CLICKED");
         
-        if (showlist.style.display === "none") {
-            showlist.style.display = "block";
-        } else {
-            showlist.style.display = "none";
-        }
-    };
+    //     if (showlist.style.display === "none") {
+    //         showlist.style.display = "block";
+    //     } else {
+    //         showlist.style.display = "none";
+    //     }
+    // };
 
 // Add Item At End Of List 
 
@@ -75,35 +75,24 @@ deletebutton.addEventListener("click", removeItemAfterClick);
 
 // Build Card
 
-function buildNewCard(text) {
+// function buildNewCard(text) {
 
-    let newCard = document.createElement("div");
-    newCard.appendChild(document.createTextNode(text));
+//     let newCard = document.createElement("div");
+//     newCard.appendChild(document.createTextNode(text));
 
-    let addBeforeButton = document.createElement('button');
-    addBeforeButton.appendChild(document.createTextNode("Add Before"));
+//     let addBeforeButton = document.createElement('button');
+//     addBeforeButton.appendChild(document.createTextNode("Add Before"));
 
-    let addAfterButton = document.createElement('button');
-    addAfterButton.appendChild(document.createTextNode("Add After"));
+//     let addAfterButton = document.createElement('button');
+//     addAfterButton.appendChild(document.createTextNode("Add After"));
 
-    return newCard;
+//     return newCard;
 
-};
+// };
 
 // Add Card Below
 
-let addNewCard = document.getElementById("addCard");
 
-addNewCard.addEventListener("click", addCardBelow);
-
-    function addCardBelow() {
-     
-        console.log("ADD BUTTON CLICKED");
-
-        
-
-
-    };
 
 
 

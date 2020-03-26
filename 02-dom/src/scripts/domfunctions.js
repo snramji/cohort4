@@ -4,9 +4,15 @@ const domfunc = {
 
 // Show list items function
 
-   showListAfterClick ('click') {
-        // console.log("SHOW BUTTON CLICKED");
-        console.log("abc");
+   showListAfterClick:  () => {
+
+        console.log("SHOW BUTTON CLICKED");
+        
+        if (showlist.style.display === "none") {
+            showlist.style.display = "block";
+        } else {
+            showlist.style.display = "none";
+        }
     }
 
 
