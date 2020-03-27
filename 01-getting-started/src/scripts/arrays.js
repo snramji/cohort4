@@ -17,7 +17,7 @@ const arrays = {
         function mySumArray(item) {
             sum += parseInt(item);
         }
-        console.log(sum)
+        // console.log(sum)
         return sum;
     },
 

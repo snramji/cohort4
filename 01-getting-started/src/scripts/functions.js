@@ -6,28 +6,28 @@ const functions = {
         // check if values are numbers
 
     checkNumber: (num1, num2) => {
-        console.log(num1, num2);
+        // console.log(num1, num2);
         return num1 * num2;
     },
 
         // check if values are strings
 
     checkString: (str1, str2) => {
-        console.log(str1, str2);
+        // console.log(str1, str2);
         return str1.concat(str2);
     },
 
     // check if values entered are arrays
 
     checkArray: (value) => {
-        console.log(value.length);
+        // console.log(value.length);
         return value.length;
     },    
 
     // check if values entered are objects
 
     checkObject: (obj) => {
-        console.log(obj.firstName);
+        // console.log(obj.firstName);
         return obj.firstName;
     },
 
@@ -35,12 +35,12 @@ const functions = {
 
     checkUndefined: (undef) => {
         if (undef == undefined) {
-            console.log(undef);
-            console.log(true);
+            // console.log(undef);
+            // console.log(true);
             return true;
         }else{
-            console.log(undef);
-            console.log(false);
+            // console.log(undef);
+            // console.log(false);
             return false;
         }
     },
@@ -49,12 +49,12 @@ const functions = {
 
     sampleIfElse: (sample1, sample2) => {
         if (sample1 > sample2) {
-            console.log(sample1, sample2);
-            console.log(true);
+            // console.log(sample1, sample2);
+            // console.log(true);
             return true;
         }else{
-            console.log(sample1, sample2);
-            console.log(false);
+            // console.log(sample1, sample2);
+            // console.log(false);
             return false;
         }
     },
@@ -64,8 +64,8 @@ const functions = {
     // returns
 
     sampleFunction: (param1, param2) => {
-        console.log(param1, param2);
-        console.log(param1 + param2);
+        // console.log(param1, param2);
+        // console.log(param1 + param2);
         return param1 + param2;
     },
 
@@ -73,7 +73,7 @@ const functions = {
 
     arrayAddFront: (item) => {
         item.unshift("oranges");
-        console.log(item);
+        // console.log(item);
         return item;
     },
 
@@ -81,7 +81,7 @@ const functions = {
 
     arrayAddBack: (item1) => {
         item1.push("oranges");
-        console.log(item1);
+        // console.log(item1);
         return item1;
     },
 
@@ -89,7 +89,7 @@ const functions = {
 
     arrayUpdateValue: (item2) => {
         item2[0] = "oranges";
-        console.log(item2);
+        // console.log(item2);
         return item2;
     },
 
@@ -102,7 +102,7 @@ const functions = {
         for (var i = 1; i <= n; i++) {
             sum += i;
         }
-        console.log(sum)
+        // console.log(sum)
         return sum;
     },
 
@@ -114,7 +114,7 @@ const functions = {
         for (x in object1) {
             string1 += object1[x] + " ";
         }
-        console.log(string1);
+        // console.log(string1);
         return string1;
     },
 
@@ -127,7 +127,7 @@ const functions = {
             string2 = i;
             i++;
         }
-        console.log("The counter is at: " + string2);
+        // console.log("The counter is at: " + string2);
         return "The counter is at: " + string2;
     },
 
@@ -141,7 +141,7 @@ const functions = {
             i++;
         }
         while (i <= number3);
-        console.log("The counter is at: " + string3);
+        // console.log("The counter is at: " + string3);
         return "The counter is at: " + string3;
     },
 
@@ -153,7 +153,7 @@ const functions = {
         function mySumArray(item) {
             sum += item;
         }
-        console.log(sum)
+        // console.log(sum)
         return sum;
     },
 
@@ -181,6 +181,7 @@ const functions = {
         if (num < 10) return "small";
         if (num < 20) return "medium";
         if (num < 100) return "large";
+        // console.log(num);
         return "extra large";
     },
 
@@ -225,8 +226,8 @@ const functions = {
         } else if (taxIncome >= 214369) {
             taxPayable = ((taxIncome-214368) * 0.33) + 49645;
         }  
-        console.log(taxIncome);
-        console.log(taxPayable);
+        // console.log(taxIncome);
+        // console.log(taxPayable);
         return Number(taxPayable.toFixed(0));
         // return taxPayable;  
     },
@@ -266,7 +267,7 @@ const functions = {
 
     // },
 
-}
+};
 
 export default functions;
 

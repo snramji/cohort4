@@ -21,28 +21,28 @@ import dictionaries from './dictionaries.js'
     add.addEventListener('click', (() => {
         let num1 = parseInt(document.getElementById('number1').value);
         let num2 = parseInt(document.getElementById('number2').value);
-        console.log(num1, num2);
+        // console.log(num1, num2);
         document.getElementById("response").innerHTML = simCalc.add(num1, num2);
     }));
 
     subtract.addEventListener('click', (() => {
         let num1 = parseInt(document.getElementById('number1').value);
         let num2 = parseInt(document.getElementById('number2').value);
-        console.log(num1, num2);
+        // console.log(num1, num2);
         document.getElementById("response").innerHTML = simCalc.subtract(num1, num2);
     }));
 
     multiply.addEventListener('click', (() => {
         let num1 = parseInt(document.getElementById('number1').value);
         let num2 = parseInt(document.getElementById('number2').value);
-        console.log(num1, num2);
+        // console.log(num1, num2);
         document.getElementById("response").innerHTML = simCalc.multiply(num1, num2);
     }));
 
     divide.addEventListener('click', (() => {
         let num1 = parseInt(document.getElementById('number1').value);
         let num2 = parseInt(document.getElementById('number2').value);
-        console.log(num1, num2);
+        // console.log(num1, num2);
         document.getElementById("response").innerHTML = simCalc.divide(num1, num2);
     }));
 
@@ -53,15 +53,15 @@ import dictionaries from './dictionaries.js'
         let effTax = 0;
         let taxIncome = parseFloat(document.getElementById("input1").value);
         const taxPayable = functions.taxCalculation(taxIncome)
-        console.log(taxIncome);
+        // console.log(taxIncome);
         document.getElementById("output1").innerHTML = taxPayable;
-        console.log(taxPayable);
+        // console.log(taxPayable);
         effTax = (taxPayable / taxIncome) * 100;
         document.getElementById("output2").innerHTML = effTax;
-        console.log(effTax);
+        // console.log(effTax);
         afterTaxIncome = taxIncome - taxPayable;
         document.getElementById("output3").innerHTML = afterTaxIncome;
-        console.log(afterTaxIncome);
+        // console.log(afterTaxIncome);
     }));
 
 // Event Listener For Working With Arrays
@@ -79,8 +79,8 @@ import dictionaries from './dictionaries.js'
 
         totalArray.addEventListener('click', (() => {
             document.getElementById("message").innerHTML = arrays.arrayTotal(inputArray);
-            console.log(inputArray)
-            console.log(inputArray.reduce((total, itemOfArray) => total + itemOfArray, 0));
+            // console.log(inputArray)
+            // console.log(inputArray.reduce((total, itemOfArray) => total + itemOfArray, 0));
         }));
 
         clearArray.addEventListener('click', (() => {
@@ -94,13 +94,13 @@ import dictionaries from './dictionaries.js'
         submitDictEntry.addEventListener('click', (() => {
             let codeProv = document.getElementById('inputProvCode').value;
             let nameProv = document.getElementById('inputProvName').value;
-            console.log(codeProv, nameProv);
+            // console.log(codeProv, nameProv);
             dictionaries.dictObjAdd(codeProv, nameProv);
         }));
 
         lookupDictEntry.addEventListener('click', (() => {
             let lookupCodeProv = document.getElementById("enterProvCode").value;
-            console.log(lookupCodeProv);
+            // console.log(lookupCodeProv);
             dictionaries.dictObjGet(lookupCodeProv);
             document.getElementById("msgDictionary").innerHTML = dictionaries.dictObjGet(lookupCodeProv);
         }));
