@@ -21,16 +21,16 @@ showlist.style.display = "none";
 
 showbutton.addEventListener("click", showListAfterClick);
 
-    // function showListAfterClick() {
+    function showListAfterClick() {
         
-    //     // console.log("SHOW BUTTON CLICKED");
+        // console.log("SHOW BUTTON CLICKED");
         
-    //     if (showlist.style.display === "none") {
-    //         showlist.style.display = "block";
-    //     } else {
-    //         showlist.style.display = "none";
-    //     }
-    // };
+        if (showlist.style.display === "none") {
+            showlist.style.display = "block";
+        } else {
+            showlist.style.display = "none";
+        }
+    };
 
 // Add Item At End Of List 
 
@@ -75,24 +75,38 @@ deletebutton.addEventListener("click", removeItemAfterClick);
 
 // Build Card
 
-// function buildNewCard(text) {
+function buildNewCard(text) {
 
-//     let newCard = document.createElement("div");
-//     newCard.appendChild(document.createTextNode(text));
+    const newCard = document.createElement("div");
+    newCard.appendChild(document.createTextNode(text));
 
-//     let addBeforeButton = document.createElement('button');
-//     addBeforeButton.appendChild(document.createTextNode("Add Before"));
+    const addBeforeButton = document.createElement('button');
+    addBeforeButton.appendChild(document.createTextNode("Add Before"));
+    newCard.appendChild(addBeforeButton);
 
-//     let addAfterButton = document.createElement('button');
-//     addAfterButton.appendChild(document.createTextNode("Add After"));
+    const addAfterButton = document.createElement('button');
+    addAfterButton.appendChild(document.createTextNode("Add After"));
+    newCard.appendChild(addAfterButton);
 
-//     return newCard;
+    return newCard;
 
-// };
+};
 
 // Add Card Below
 
+let addcard = document.getElementById("addCardButton");
+let text = "New Card";
 
+addcard.addEventListener("click", addCardAfterClick);
+
+    function addCardAfterClick() {
+
+        console.log("Add Card Button Clicked");
+
+        // const newCard = buildNewCard(text);
+        // card.parentElement.insertAfter(newCard, card);
+
+    }
 
 
 
