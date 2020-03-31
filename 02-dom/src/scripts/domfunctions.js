@@ -1,13 +1,16 @@
 // DOM Functions //
 
-const domfunc = {
+const domfunctions = {
 
 // Show list items function
 
-   showListAfterClick:  () => {
+   showListAfterClick:  (e) => {
 
-        console.log("SHOW BUTTON CLICKED");
+        console.log("SHOW BUTTON CLICKED IN DOMFUNCTIONS");
         
+        // let showlist = document.getElementById("itemList");
+        // showlist.style.display = "none";
+
         if (showlist.style.display === "none") {
             showlist.style.display = "block";
         } else {
@@ -23,7 +26,4 @@ const domfunc = {
 
 };
 
-
-
-
-export default domfunc;
+export default domfunctions;

@@ -8,7 +8,7 @@
         <div class="mainBox" id="parentBox">
             <h1>Basic DOM</h1>
             <span>This is a list of items </span>
-            <button type="button" id="buttonShow" class="button">Show</button>
+            <button type="button" id="buttonShow" class="button">Show List</button>
             <br>
             <div class="listBox" id="itemList">
                 <ol>
@@ -19,31 +19,32 @@
             </div>
             <br>
             <span>Click to add next item</span>
-            <button type="button" id="buttonAdd" class="button">Add</button>
+            <button type="button" id="buttonAdd" class="button">Add Item</button>
             <br>
             <span>Remove last item from list</span>
-            <button type="button" id="buttonDelete" class="button">Delete</button>
+            <button type="button" id="buttonDelete" class="button">Delete Item</button>
             <br>
             <!-- <input type="number" id="inputNumber" class="input" placeholder="Enter Item Number" > -->
             <br>
         </div>
         <br>
         <div class="cardPanels">
-            <div class="leftPanel" id="leftSide">
+            <div class="leftPanel">
                 <h1>Working With Cards</h1>
                 <button type="button" id="addCardButton" class="button">Add Card</button>
-                <div class = "cards" id = "cardSection">
+                <div class = "cards" id = "idCardSection">
                 <br>
-                    <div class="card" id="card">
-                        <h2 class="cardTitle" id="cardNumber">Card 1</h2>
-                        <button type="button" id="addCardBefore" class="button">Add Before</button>
-                        <button type="button" id="addCardAfter" class="button">Add After</button>
+                    <div class="myCardClass" id="idInitialCard">
+                        <strong class="cardTitle" id="cardTitle">Initial Card</strong>
                         <br>
-                        <button type="button" id="removeCard" class="button">Remove Card</button>
+                        <button type="button" id="addBeforeButton" class="button">Add Before</button>
+                        <button type="button" id="addAfterButton" class="button">Add After</button>
+                        <br>
+                        <button type="button" id="removeButton" class="button">Remove Card</button>
                     </div>
                 </div>
             </div>
-            <div class="rightPanel" id="rightSide">
+            <div class="rightPanel">
                 <h1>Right Side Panel</h1>
             </div>
         </div>
