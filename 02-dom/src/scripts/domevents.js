@@ -75,95 +75,85 @@ import domfunctions from './domfunctions.js'
 
     function buildNewCard(div) {
 
-        console.log("This is a new card")
+        // console.log("This is a new card")
         
-        // let div = document.createElement("div");
         div.classList.add("myCardClass");
-
-        const breakLine1 = document.createElement("br");
-        div.appendChild(breakLine1);
-        
+      
         const cardTitle = document.createElement("strong");
         cardTitle.textContent = "Card " + cardNum++;
         cardTitle.classList.add("text-center");
+        div.appendChild(cardTitle);
+
+        const breakLine1 = document.createElement("br");
+        div.appendChild(breakLine1);
+
+        const addBeforeButton = document.createElement('button');
+        addBeforeButton.append(document.createTextNode("Add Before"));
+        addBeforeButton.classList.add("button");
+        div.appendChild(addBeforeButton);
+
+        const addAfterButton = document.createElement('button');
+        addAfterButton.append(document.createTextNode("Add After"));
+        addAfterButton.classList.add("button");
+        div.appendChild(addAfterButton);
 
         const breakLine2 = document.createElement("br");
         div.appendChild(breakLine2);
 
-        // const addBeforeButton = document.createElement('button');
-        // addBeforeButton.textContent("Add Before");
-        // addBeforeButton.classList.add("button");
-        // div.appendChild(addBeforeButton);
-
-        // const addAfterButton = document.createElement('button');
-        // addAfterButton.textContent("Add After");
-        // addAfterButton.classList.add("button");
-        // div.appendChild(addAfterButton);
-
-        // const breakLine3 = document.createElement("br");
-        // div.appendChild(breakLine3);
-
-        // const removeCardButton = document.createElement('button');
-        // removeCardButton.textContent("Remove Card");
-        // removeCardButton.classList.add("button");
-        // div.appendChild(removeCardButton);
+        const removeCardButton = document.createElement('button');
+        removeCardButton.append(document.createTextNode("Remove Card"));
+        removeCardButton.classList.add("button");
+        div.appendChild(removeCardButton);
 
     };
 
-// Add Card Below
+    document.body.addEventListener("click", e => {
 
-    let addCardBelow = document.getElementById("addCardButton");
+        if (e.target.nodeName === 'BUTTON') {
 
-    addCardBelow.addEventListener("click", () => {
+            if (e.target.textContent === "Add Card") {
 
-        console.log("Add Card Button Clicked");
+                // console.log("Add Card Button Clicked");
+                
+                let div = document.createElement("div");
+                buildNewCard(div);
+                cardSection.appendChild(div);
 
-        let div = document.createElement("div");
-        buildNewCard(div);
-        cardSection.appendChild(div);
+            } else if (e.target.textContent === "Add Before") {
 
-    });
+                // console.log("Add Before Button Clicked");
 
-// Add Card Before
+                let div = document.createElement("div");
+                buildNewCard(div);
+                cardSection.insertBefore(div, event.target.parentNode);
 
-    let addCardBefore = document.getElementById("addBeforeButton");
-    
-    addCardBefore.addEventListener("click", () => {
+            } else if (e.target.textContent === "Add After") {
 
-        console.log("Add Before Button Clicked");
+                // console.log("Add After Button Clicked");
 
-        // let div = document.createElement("div");
-        // buildNewCard(div);
-        // initialCard.appendChild(div);
+                let div = document.createElement("div");
+                buildNewCard(div);
+                cardSection.insertBefore(div, event.target.parentNode.nextElementSibling);
+                
+            } else if (e.target.textContent === "Remove Card") {
 
-    });
+                // console.log("Remove Card Button Clicked");
 
-// Add Card After
+                let div = document.getElementById("idCardSection");
+                
+                div.removeChild(e.target.parentElement);
+                
 
-    let addCardAfter = document.getElementById("addAfterButton");
-    
-    addCardAfter.addEventListener("click", () => {
+               
+              
+           }
 
-        console.log("Add After Button Clicked");
+        }
 
-        // let div = document.createElement("div");
-        // buildNewCard(div);
-        // idInitialCard.appendChild(div);
+    })
 
-    });
 
-// Remove Card
 
-    let removeCard = document.getElementById("removeButton");
-    
-    removeCard.addEventListener("click", () => {
-
-        console.log("Remove Card Button Clicked");
-
-        let div = document.getElementById("idCardSection");
-        div.removeChild(div.lastElementChild);
-
-    });
 
 
 
