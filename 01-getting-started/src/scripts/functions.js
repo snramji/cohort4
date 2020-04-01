@@ -223,13 +223,11 @@ const functions = {
             taxPayable = ((taxIncome-97069) * 0.26) + 17230;
         } else if (taxIncome >= 150474 && taxIncome <= 214368) {
             taxPayable = ((taxIncome-150473) * 0.29) + 31115;
-        } else if (taxIncome >= 214369) {
+        } else 
             taxPayable = ((taxIncome-214368) * 0.33) + 49645;
-        }  
-        // console.log(taxIncome);
-        // console.log(taxPayable);
-        return Number(taxPayable.toFixed(0));
-        // return taxPayable;  
+
+            return Number(taxPayable.toFixed(0));
+     
     },
 
 // Logic for Working With Arrays -- see file arrays.js
