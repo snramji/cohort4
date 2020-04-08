@@ -1,10 +1,10 @@
-const functions = {
+const oopFunctions = {
 
     // Test the plumbing
 
-    plumbTest: (test1, test2) => {
-        return test1 * test2
-    }
+    // plumbTest() {
+    //     return "plumbing test";
+    // }
 
     // Constructor
 
@@ -14,4 +14,4 @@ const functions = {
 
 };
 
-export default functions;
+export default oopFunctions;
