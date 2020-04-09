@@ -1,17 +1,33 @@
 const oopFunctions = {
 
-    // Test the plumbing
+// Test the plumbing
 
-    // plumbTest() {
-    //     return "plumbing test";
-    // }
+    plumbTest() {
+        return "plumbing test";
+    }
 
-    // Constructor
-
-
+}
 
 
+// Unit testing
 
-};
+class Person {
 
-export default oopFunctions;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    sayHello() {
+        return `Hello there ${this.name}`;
+    }
+
+    birthday() {
+        this.age++;
+    }
+
+
+}
+
+
+export default {oopFunctions, Person};
