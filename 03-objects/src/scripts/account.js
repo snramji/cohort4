@@ -1,33 +1,33 @@
-const oopFunctions = {
+// Account class
 
-// Test the plumbing
+class Account {
 
-    plumbTest() {
-        return "plumbing test";
-    }
-
-}
-
-
-// Unit testing
-
-class Person {
-
-    constructor(name, age) {
+    constructor(name, balance) {
         this.name = name;
-        this.age = age;
+        this.balance = balance;
     }
 
-    sayHello() {
-        return `Hello there ${this.name}`;
+    deposit(amount) {
+        this.balance += Number(amount);
+        return this.balance;
     }
 
-    birthday() {
-        this.age++;
+    withdraw(amount) {
+        this.balance -= Number(amount);
+        return this.balance;
     }
 
+    balance() {
+        return this.balance;
+    }
 
 }
 
+// class AccountControls {
+//     constructor() {
+//         // this.accountArray = [];
+//     }
+// }
 
-export default {oopFunctions, Person};
+// export default {Account, AccountControls};
+export default {Account};

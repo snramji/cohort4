@@ -1,87 +1,57 @@
-import ooStuff from './account.js'
+// import {Account, AccountControls}  from './account.js';
+import Account from './account.js';
 
-// Test the plumbing
+const newAcct1 = new Account("Savings", 100);
+const newAcct2 = new Account("Chequing", 500);
 
-// test('Plumbing test', () => {
-//     console.log("Test the plumbing");
-//     console.log(oopFunctions.plumbTest());
+//   Test account class
 
-    // expect(oopFunctions.plumbTest(2, 3)).toBe(6);
-    // expect(oopFunctions.plumbTest(100, 101)).toBe(10100);
+test('Test the account class', () => {
 
-// });
+    console.log(newAcct1.name);
+    console.log(newAcct2.balance);
 
-// Discovery about classes, methods, etc.
-
-
-// test('Test the class', () => {
-
-//     const larry = new Person("Larry", 29);
-//     const lorraine = new Person("Lorraine", 28);
-
-//     // larry.age = 29;
-//     // larry.name = "Larry";
-//     // lorraine.age = 28;
-//     // lorraine.name = "Lorraine";
-
-//     console.log(larry.sayHello());
-//     console.log(lorraine);
+    expect(newAcct1).toBeInstanceOf(Account);
+    expect(newAcct1.name).toBe("Savings");
+    expect(newAcct2.balance).toBe(500);
     
-// })
-
-// Moved to account.js
-
-// class Person {
-    
-//     constructor(name, age) {
-//         this.name = name;
-//         this.age = age;
-//     }
-
-//     sayHello() {
-//         return `Hello there ${this.name}`;
-//     }
-// }
-
-// Unit testing oop
-
-test('Test the oop', () => {
-
-    // console.log(ooStuff);
-    // console.log(ooStuff.oopFunctions.plumbTest());
-    // console.log(larry);   
-
-    const larry = new ooStuff.Person("Larry", 29);
-    expect(larry.name).toBe("Larry");
-    expect(larry.age).toBe(29);
-
-
 });
 
-test('Test oop birthday', () => {
-    const family = [];
+// Test deposit and balance methods
+
+test('Test the deposit method', () => {
     
-    family.push(new ooStuff.Person("Larry", 29));
-    family.push(new ooStuff.Person("Lorraine", 28));
+    newAcct1.deposit(50);
+    newAcct2.deposit(200);
 
-    // console.log(family);
-    // console.log(family[0]);
-    // console.log(family[1]);
+    console.log(newAcct1.balance);
+    expect (newAcct1.balance).toBe(150);
+    
+    console.log(newAcct2.balance);
+    expect (newAcct2.balance).toBe(700);
 
-    expect(family[0].name).toBe("Larry");
-    expect(family[0].age).toBe(29);
+})
 
-    expect(family[1].name).toBe("Lorraine");
-    expect(family[1].age).toBe(28);
+// Test withdraw and balance methods
 
-    console.log("Before birthday, " + family[0].name + "'s age is: " + family[0].age);
+test('Test the withdraw method', () => {
 
-    family[0].birthday();
-    expect(family[0].age).toBe(30);
+    newAcct1.withdraw(150);
+    newAcct2.withdraw(100);
 
-    console.log("After birthday, " + family[0].name + "'s age is: " + family[0].age);
+    console.log(newAcct1.balance);
+    expect (newAcct1.balance).toBe(0);
+    
+    console.log(newAcct2.balance);
+    expect (newAcct2.balance).toBe(600);
 
-    family[1].birthday();
-    expect(family[1].age).toBe(29);
+})
 
-  });
+// Test account controls
+
+// const acctControl = new AccountControls ();
+
+// test('Test adding accounts to the array', () => {
+//     expect (acctControl.accountArray).toEqual([]);
+// })
+
