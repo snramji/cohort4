@@ -23,11 +23,10 @@ class Account {
 
 }
 
-// class AccountControls {
-//     constructor() {
-//         // this.accountArray = [];
-//     }
-// }
+class AccountControls {
+    constructor() {
+        this.accountArray = [];
+    }
+}
 
-// export default {Account, AccountControls};
-export default {Account};
+export default { Account, AccountControls };

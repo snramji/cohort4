@@ -1,3 +1,43 @@
+<!DOCTYPE html>
 <html>
-    
-</html>
+    <head>
+        <title> Competency 130 - JavaScript Objects</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="clStaticBox">
+            <h1>Bank Accounts</h1>
+            <span>Open New Account: </span>
+            <input placeholder="Account Name" id="idAcctName">
+            <input placeholder="Initial Deposit" type="number" id="idInitDep">
+            <button type="button" id="idAddAcctButton" class="button">Add Account</button>
+            <br><br>
+            <strong>Account Status</strong>
+            <br>
+            <button type="button" id="idLowestButton" class="button">Lowest Account Balance</button>
+            <button type="button" id="idHighestButton" class="button">Highest Account Balance</button>
+            <button type="button" id="idTotalButton" class="button">Total Account Balance</button>
+            <br><br>
+            <strong>Message Area</strong>
+            <br>
+            <span id="idAccountStatusMsg">? ? ? </span>
+            <br>
+        </div>
+        <br>
+        <div class="clDynamicBox">
+                <h1>Banking Transactions</h1>
+                <div class = "clAcctCards" id = "idAcctCardSection">                 
+                    <strong class="cardTitle" id="cardTitle">Account Name</strong>
+                    <br>
+                    <input placeholder="Amount" type="number" id="idAmount">
+                    <br>
+                    <button type="button" id="idDepositButton" class="button">Deposit</button>
+                    <button type="button" id="idWithdrawButton" class="button">Withdraw</button>
+                    <br>
+                    <span> Current Balance: </span>
+                    <br>
+                    <button type="button" id="idRemoveAcctButton" class="button">Remove Account</button>
+                </div>
+        </div>
+    </body>
+    <script type="module" src="./scripts/index.js"></script>

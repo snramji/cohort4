@@ -1,17 +1,17 @@
-// import {Account, AccountControls}  from './account.js';
-import Account from './account.js';
 
-const newAcct1 = new Account("Savings", 100);
-const newAcct2 = new Account("Chequing", 500);
+import ooStuff from './account.js';
 
 //   Test account class
 
 test('Test the account class', () => {
 
+    const newAcct1 = new ooStuff.Account("Savings", 100);
+    const newAcct2 = new ooStuff.Account("Chequing", 500);
+
     console.log(newAcct1.name);
     console.log(newAcct2.balance);
 
-    expect(newAcct1).toBeInstanceOf(Account);
+    expect(newAcct1).toBeInstanceOf(ooStuff.Account);
     expect(newAcct1.name).toBe("Savings");
     expect(newAcct2.balance).toBe(500);
     
@@ -20,15 +20,18 @@ test('Test the account class', () => {
 // Test deposit and balance methods
 
 test('Test the deposit method', () => {
+
+    const newAcct1 = new ooStuff.Account("Savings", 100);
+    const newAcct2 = new ooStuff.Account("Chequing", 500);
     
-    newAcct1.deposit(50);
-    newAcct2.deposit(200);
+    newAcct1.deposit(100);
+    newAcct2.deposit(500);
 
     console.log(newAcct1.balance);
-    expect (newAcct1.balance).toBe(150);
+    expect (newAcct1.balance).toBe(200);
     
     console.log(newAcct2.balance);
-    expect (newAcct2.balance).toBe(700);
+    expect (newAcct2.balance).toBe(1000);
 
 })
 
@@ -36,22 +39,25 @@ test('Test the deposit method', () => {
 
 test('Test the withdraw method', () => {
 
-    newAcct1.withdraw(150);
+    const newAcct1 = new ooStuff.Account("Savings", 100);
+    const newAcct2 = new ooStuff.Account("Chequing", 500);
+
+    newAcct1.withdraw(200);
     newAcct2.withdraw(100);
 
     console.log(newAcct1.balance);
-    expect (newAcct1.balance).toBe(0);
+    expect (newAcct1.balance).toBe(-100);
     
     console.log(newAcct2.balance);
-    expect (newAcct2.balance).toBe(600);
+    expect (newAcct2.balance).toBe(400);
 
 })
 
 // Test account controls
 
-// const acctControl = new AccountControls ();
 
-// test('Test adding accounts to the array', () => {
-//     expect (acctControl.accountArray).toEqual([]);
-// })
+test('Test adding accounts to the array', () => {
+    const acctControl = new ooStuff.AccountControls ();
+    expect (acctControl.accountArray).toEqual([]);
+})
 
