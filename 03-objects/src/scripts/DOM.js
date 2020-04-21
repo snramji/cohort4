@@ -2,7 +2,7 @@ const DOMfunctions = {
 
     // let cardNum = 1
     
-    buildNewCard(div) {
+    buildNewCard(div, node, text) {
         
         // console.log("This is a new card")
         const cardSection = document.getElementById("idAcctCardSection");
@@ -10,24 +10,12 @@ const DOMfunctions = {
         div.classList.add("clAcctCards");
     
         const cardTitle = document.createElement("strong");
-        cardTitle.textContent = "Account Name;
+        cardTitle.textContent = "Account Name";
         cardTitle.classList.add("text-center");
         div.appendChild(cardTitle);
 
         const breakLine1 = document.createElement("br");
         div.appendChild(breakLine1);
-
-        const addDepositButton = document.createElement('button');
-        addDepositButton.append(document.createTextNode("Deposit"));
-        addDepositButton.classList.add("button");
-        div.appendChild(addDepositButton);
-
-        const addWithdrawButton = document.createElement('button');
-        addWithdrawButton.append(document.createTextNode("Withdraw"));
-        addWithdrawButton.classList.add("button");
-        div.appendChild(addAfterButton);
-
-        const currentBalance = 
 
         const breakLine2 = document.createElement("br");
         div.appendChild(breakLine2);

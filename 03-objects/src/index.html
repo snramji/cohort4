@@ -2,39 +2,53 @@
 <html>
     <head>
         <title> Competency 130 - JavaScript Objects</title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" tyoe="text/css" href="./style.css">
     </head>
     <body>
         <div class="clStaticBox">
             <h1>Bank Accounts</h1>
-            <span>Open New Account: </span>
-            <input placeholder="Account Name" id="idAcctName">
-            <input placeholder="Initial Deposit" type="number" id="idInitDep">
-            <button type="button" id="idAddAcctButton" class="button">Add Account</button>
-            <br><br>
-            <strong>Account Status</strong>
+            <div id="idNewAcct" class="clDivSection">
+                <span>Open New Account: </span>
+                <input placeholder="Account Name" type="text" id="idAcctName">
+                <input placeholder="Initial Deposit" type="number" id="idInitDeposit">
+                <button type="button" id="idAddAcctBtn" class="button">Add Account</button>
+                <br>
+            </div>
             <br>
-            <button type="button" id="idLowestButton" class="button">Lowest Account Balance</button>
-            <button type="button" id="idHighestButton" class="button">Highest Account Balance</button>
-            <button type="button" id="idTotalButton" class="button">Total Account Balance</button>
-            <br><br>
-            <strong>Message Area</strong>
+            <div id="idUpdateAcct" class="clDivSection">
+                <strong>Banking Transactions</strong>
+                <br>
+                Select Account to Update 
+                <select id="dropdownID" name="dropdown">
+                    <option selected="">Select</option>
+                </select><br>
+                <input placeholder="Amount" type="number" id="idAmount">
+                <button type="button" id="idDepositBtn" class="button">Deposit</button>
+                <button type="button" id="idWithdrawBtn" class="button">Withdraw</button>
+                <br>
+            </div>
             <br>
-            <span id="idAccountStatusMsg">? ? ? </span>
-            <br>
+            <div id="idAcctStatus" class="clDivSection">
+                <strong>Account Status</strong>
+                <br>
+                <button type="button" id="idLowestBtn" class="button">Lowest Account Balance</button>
+                <button type="button" id="idHighestBtn" class="button">Highest Account Balance</button>
+                <button type="button" id="idTotalBtn" class="button">Total Account Balance</button>
+                <br><br>
+                <strong>Message Area</strong>
+                <br>
+                <p id="idAccountStatusMsg">? ? ? </p>
+            </div>
         </div>
         <br>
         <div class="clDynamicBox">
-                <h1>Banking Transactions</h1>
-                <div class = "clAcctCards" id = "idAcctCardSection">                 
+            <h1>Account Details</h1>
+                <div class = "clAcctCards" id = "idAcctCards">                 
                     <strong class="cardTitle" id="cardTitle">Account Name</strong>
+                    <br><br>
+                    <strong> Current Balance: </strong>
                     <br>
-                    <input placeholder="Amount" type="number" id="idAmount">
-                    <br>
-                    <button type="button" id="idDepositButton" class="button">Deposit</button>
-                    <button type="button" id="idWithdrawButton" class="button">Withdraw</button>
-                    <br>
-                    <span> Current Balance: </span>
+                    <p id="idAccountStatusMsg">? ? ? </pspan>
                     <br>
                     <button type="button" id="idRemoveAcctButton" class="button">Remove Account</button>
                 </div>

@@ -1,6 +1,8 @@
 import DOMfunctions from './DOM.js';
 import ooStuff from './account.js';
 
+
+
 document.body.addEventListener("click", e => {
 
     if (e.target.nodeName === 'BUTTON') {
@@ -12,22 +14,24 @@ document.body.addEventListener("click", e => {
             let div = document.createElement("div");
             DOMfunctions.buildNewCard(div);
             cardSection.appendChild(div);
+            
+            if 
 
         } else if (e.target.textContent === "Deposit") {
 
             // console.log("Deposit Button Clicked");
 
-            let div = document.createElement("div");
-            buildNewCard(div);
-            cardSection.insertBefore(div, event.target.parentNode);
+            // let div = document.createElement("div");
+            // buildNewCard(div);
+            // cardSection.insertBefore(div, event.target.parentNode);
 
         } else if (e.target.textContent === "Withdraw") {
 
             // console.log("Add After Button Clicked");
 
-            let div = document.createElement("div");
-            buildNewCard(div);
-            cardSection.insertBefore(div, event.target.parentNode.nextElementSibling);
+            // let div = document.createElement("div");
+            // buildNewCard(div);
+            // cardSection.insertBefore(div, event.target.parentNode.nextElementSibling);
             
         } else if (e.target.textContent === "Remove Account") {
 

@@ -5,8 +5,8 @@ import ooStuff from './account.js';
 
 test('Test the account class', () => {
 
-    const newAcct1 = new ooStuff.Account("Savings", 100);
-    const newAcct2 = new ooStuff.Account("Chequing", 500);
+    let newAcct1 = new ooStuff.Account("Savings", 100);
+    let newAcct2 = new ooStuff.Account("Chequing", 500);
 
     console.log(newAcct1.name);
     console.log(newAcct2.balance);
@@ -17,12 +17,12 @@ test('Test the account class', () => {
     
 });
 
-// Test deposit and balance methods
+// Test deposit and balance functions
 
 test('Test the deposit method', () => {
 
-    const newAcct1 = new ooStuff.Account("Savings", 100);
-    const newAcct2 = new ooStuff.Account("Chequing", 500);
+    let newAcct1 = new ooStuff.Account("Savings", 100);
+    let newAcct2 = new ooStuff.Account("Chequing", 500);
     
     newAcct1.deposit(100);
     newAcct2.deposit(500);
@@ -33,14 +33,14 @@ test('Test the deposit method', () => {
     console.log(newAcct2.balance);
     expect (newAcct2.balance).toBe(1000);
 
-})
+});
 
-// Test withdraw and balance methods
+// Test withdraw and balance functions
 
 test('Test the withdraw method', () => {
 
-    const newAcct1 = new ooStuff.Account("Savings", 100);
-    const newAcct2 = new ooStuff.Account("Chequing", 500);
+    let newAcct1 = new ooStuff.Account("Savings", 100);
+    let newAcct2 = new ooStuff.Account("Chequing", 500);
 
     newAcct1.withdraw(200);
     newAcct2.withdraw(100);
@@ -51,13 +51,46 @@ test('Test the withdraw method', () => {
     console.log(newAcct2.balance);
     expect (newAcct2.balance).toBe(400);
 
-})
+});
 
 // Test account controls
 
 
 test('Test adding accounts to the array', () => {
-    const acctControl = new ooStuff.AccountControls ();
-    expect (acctControl.accountArray).toEqual([]);
+    const acctControl = new ooStuff.AcctControls ();
+    expect (acctControl.acctArray).toEqual([]);
+});
+
+test('Test the add account function', () => {
+    const controllerTest1 = new ooStuff.AcctControls();
+    expect(controllerTest1.addAcct("newAcct3", 500)).toEqual([{name: 'newAcct3', balance: 500}]);
+    console.log(controllerTest1.acctArray);
+    expect(controllerTest1.addAcct("newAcct4", 1500)).toEqual([{name: 'newAcct3', balance: 500}, {name:"newAcct4", balance: 1500}]);
+    console.log(controllerTest1.acctArray);
+});
+
+test('Test the total account balance method', () => {
+    const controllerTest2 = new ooStuff.AcctControls();
+    controllerTest2.addAcct("newAcct5", 2000);
+    controllerTest2.addAcct("newAcct6", 2500);
+    controllerTest2.addAcct("newAcct6", 2500);
+    controllerTest2.addAcct("newAcct7", 3000);
+    console.log(controllerTest2.acctArray);
+    console.log(controllerTest2.acctArray[1]);
+    console.log(controllerTest2.totalAcctBalance());
+    expect(controllerTest2.totalAcctBalance()).toBe(10000);
+});
+
+test('Test the individual account total balance method', () => {
+    const controllerTest3 = new ooStuff.AcctControls();
+    controllerTest3.addAcct("newAcct8", 2000);
+    controllerTest3.addAcct("newAcct8", 2500);
+    controllerTest3.addAcct("newAcct9", 2500);
+    controllerTest3.addAcct("newAcct9", 3000);
+    console.log(controllerTest3.acctArray);
+    console.log(controllerTest3.acctArray[1]);
+    console.log(controllerTest3.totalAcctBalance());
+    expect(controllerTest3.acctBalance("newAcct8")).toBe(4500);
+    expect(controllerTest3.acctBalance("newAcct9")).toBe(5500);
 })
 

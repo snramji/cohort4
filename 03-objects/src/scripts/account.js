@@ -23,10 +23,35 @@ class Account {
 
 }
 
-class AccountControls {
+class AcctControls {
     constructor() {
-        this.accountArray = [];
+        this.acctArray = [];
     }
+
+    addAcct(name, balance) {
+        this.acctArray.push(new Account(name, balance));
+        return this.acctArray;
+    }
+
+    acctBalance(name) {
+        let sortAcctArray = this.acctArray
+        sortAcctArray.sort();
+        for (let i = 0; i < this.acctArray.length; i++) {
+            if(this.acctArray.sort())
+            
+        }
+        return totalBalance;
+    }
+
+    totalAcctBalance() {
+        let totalBalance = 0;
+        for (let i = 0; i < this.acctArray.length; i++) {
+            totalBalance += Number(this.acctArray[i].balance);
+        }
+        return totalBalance;
+    }
+
+
 }
 
-export default { Account, AccountControls };
+export default { Account, AcctControls };
