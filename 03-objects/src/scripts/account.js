@@ -33,14 +33,9 @@ class AcctControls {
         return this.acctArray;
     }
 
-    acctBalance(name) {
-        let sortAcctArray = this.acctArray
-        sortAcctArray.sort();
-        for (let i = 0; i < this.acctArray.length; i++) {
-            if(this.acctArray.sort())
-            
-        }
-        return totalBalance;
+    balance(name) {
+        let index = this.acctArray.findIndex(acctFinder => acctFinder.name === name);
+        return this.acctArray[index].balance();
     }
 
     totalAcctBalance() {
