@@ -7,13 +7,13 @@ class Account {
         this.balance = balance;
     }
 
-    deposit(amtDeposit) {
-        this.balance += Number(amtDeposit);
+    deposit(amount) {
+        this.balance += Number(amount);
         return this.balance;
     }
 
-    withdraw(amtWithdraw) {
-        this.balance -= Number(amtWithdraw);
+    withdraw(amount) {
+        this.balance -= Number(amount);
         return this.balance;
     }
 
@@ -33,9 +33,24 @@ class AcctControls {
         return this.acctArray;
     }
 
-    balance(name) {
+    balanceForAcct(name) {
         let index = this.acctArray.findIndex(acctFinder => acctFinder.name === name);
-        return this.acctArray[index].balance;
+        return this.acctArray[index].acctBalance();
+    }
+
+    depositToAcct(name, amount) {
+        let index = this.acctArray.findIndex(acctFinder => acctFinder.name === name);
+        this.acctArray[index].deposit(amount);
+    }
+
+    withdrawFromAcct(name, amount){
+        let index = this.acctArray.findIndex(acctFinder => acctFinder.name === name);
+        this.acctArray[index].withdraw(amount);
+    }
+
+    removeAcct(acctObject) {
+        let index = this.acctArray.findIndex(acctFinder => acctFinder.name === acctObject);
+        this.acctArray.splice(index, 1);
     }
 
     totalAcctBalance() {
@@ -46,6 +61,33 @@ class AcctControls {
         return totalBalance;
     }
 
+    lowestAcctBalance() {
+        let lowestAcctBal = Number.POSITIVE_INFINITY;
+        let lowestAcctName;
+        for (let i = 0; i < this.acctArray.length; i++) {
+            let lowBalance = Number(this.acctArray[i].balance);
+            let acctName = this.acctArray[i].name;
+            if (lowBalance < lowestAcctBal) {
+                lowestAcctBal = lowBalance;
+                lowestAcctName = acctName;
+            }
+        }
+        return `${lowestAcctName}: $${lowestAcctBal}`;
+    }
+
+    highestAcctBalance() {
+        let highestAcctBal = 0;
+        let highestAcctName;
+        for (let i = 0; i < this.acctArray.length; i++) {
+            let highBalance = Number(this.acctArray[i].balance);
+            let acctName = this.acctArray[i].name;
+            if (highestAcctBal < highBalance) {
+                highestAcctBal = highBalance;
+                highestAcctName = acctName;
+            }
+        }
+        return `${highestAcctName}: $${highestAcctBal}`;
+    } 
 
 }
 

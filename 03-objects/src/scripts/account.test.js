@@ -8,9 +8,6 @@ test('Test the account class', () => {
     let newAcct1 = new ooStuff.Account("Savings", 100);
     let newAcct2 = new ooStuff.Account("Chequing", 500);
 
-    // console.log(newAcct1.name);
-    // console.log(newAcct2.balance);
-
     expect(newAcct1).toBeInstanceOf(ooStuff.Account);
     expect(newAcct1.name).toBe("Savings");
     expect(newAcct2.balance).toBe(500);
@@ -26,9 +23,6 @@ test('Test the deposit method', () => {
     
     newAcct3.deposit(100);
     newAcct4.deposit(500);
-
-    // console.log(newAcct3.acctBalance());
-    // console.log(newAcct4.acctBalance());
     
     expect (newAcct3.acctBalance()).toBe(1100);
     expect (newAcct4.acctBalance()).toBe(5500);
@@ -44,9 +38,6 @@ test('Test the withdraw method', () => {
 
     newAcct5.withdraw(200);
     newAcct6.withdraw(100);
-
-    // console.log(newAcct5.acctBalance());
-    // console.log(newAcct6.acctBalance());
     
     expect (newAcct5.acctBalance()).toBe(-100);
     expect (newAcct6.acctBalance()).toBe(400);
@@ -57,49 +48,98 @@ test('Test the withdraw method', () => {
 
 
 test('Test the account array constructor', () => {
-    const acctControl = new ooStuff.AcctControls ();
-    
-    // console.log(acctControl.acctArray);
+    const controllerTest = new ooStuff.AcctControls ();
 
-    expect (acctControl.acctArray).toEqual([]);
+    expect (controllerTest.acctArray).toEqual([]);
 });
 
 test('Test the add account function', () => {
     const controllerTest1 = new ooStuff.AcctControls();
         
     expect(controllerTest1.addAcct("newAcct7", 500)).toEqual([{name: 'newAcct7', balance: 500}]);
-        
-    // console.log(controllerTest1.acctArray);
-    
+       
     expect(controllerTest1.addAcct("newAcct8", 1500)).toEqual([{name: 'newAcct7', balance: 500}, {name:"newAcct8", balance: 1500}]);
     
-    // console.log(controllerTest1.acctArray);
-
 });
 
-test('Test the individual account total balance method', () => {
-    const controllerTest3 = new ooStuff.AcctControls();
-    controllerTest3.addAcct("newAcct8", 100);
-    controllerTest3.addAcct("newAcct8", 500);
-    controllerTest3.addAcct("newAcct9", 200);
-    controllerTest3.addAcct("newAcct9", 300);
-    console.log(controllerTest3.acctArray);
-    console.log(controllerTest3.acctArray[1].name);
-    console.log(controllerTest3.acctArray[2].balance);
-    expect(controllerTest3.balance("newAcct8")).toBe(600);
-    expect(controllerTest3.balance("newAcct9")).toBe(500);
-});
-
-test('Test the total account balance method', () => {
+test('Check the balance for individual accounts', () => {
     const controllerTest2 = new ooStuff.AcctControls();
-    controllerTest2.addAcct("newAcct5", 2000);
-    controllerTest2.addAcct("newAcct6", 2500);
-    controllerTest2.addAcct("newAcct6", 2500);
-    controllerTest2.addAcct("newAcct7", 3000);
-    // console.log(controllerTest2.acctArray);
-    // console.log(controllerTest2.acctArray[1]);
-    // console.log(controllerTest2.totalAcctBalance());
-    expect(controllerTest2.totalAcctBalance()).toBe(10000);
+    
+    controllerTest2.addAcct("newAcct9", 100);
+    controllerTest2.addAcct("newAcct10", 200);
+        
+    expect(controllerTest2.balanceForAcct("newAcct9")).toBe(100);
+    expect(controllerTest2.balanceForAcct("newAcct10")).toBe(200);
+});
+
+test('Test to deposit into accounts', () => {
+    const controllerTest3 = new ooStuff.AcctControls();
+
+    controllerTest3.addAcct("newAcct11", 1000);
+    expect(controllerTest3.balanceForAcct("newAcct11")).toBe(1000);
+    
+    controllerTest3.depositToAcct("newAcct11", 500);
+    expect(controllerTest3.balanceForAcct("newAcct11")).toBe(1500);
+
+});
+
+test('Test to withdraw from accounts', () => {
+    const controllerTest4 = new ooStuff.AcctControls();
+
+    controllerTest4.addAcct("newAcct12", 250);
+    controllerTest4.depositToAcct("newAcct12", 300)
+    expect(controllerTest4.balanceForAcct("newAcct12")).toBe(550);
+    
+    controllerTest4.withdrawFromAcct("newAcct12", 50);
+    expect(controllerTest4.balanceForAcct("newAcct12")).toBe(500);
+
+});
+
+test('Test to remove account', () => {
+    const controllerTest5 = new ooStuff.AcctControls();
+    
+    controllerTest5.addAcct("newAcct13", 1000);
+    expect(controllerTest5.balanceForAcct("newAcct13")).toBe(1000);
+
+    controllerTest5.removeAcct("newAcct13");
+    expect (controllerTest5.acctArray).toEqual([]);
+})
+
+test('Test for the total account balance', () => {
+    const controllerTest6 = new ooStuff.AcctControls();
+    
+    controllerTest6.addAcct("newAcct14", 2000);
+    controllerTest6.addAcct("newAcct15", 2500);
+    controllerTest6.addAcct("newAcct15", 2500);
+    controllerTest6.addAcct("newAcct16", 3000);
+    
+    // console.log(controllerTest6.acctArray);
+    // console.log(controllerTest6.acctArray[1]);
+    // console.log(controllerTest6.totalAcctBalance());
+    
+    expect(controllerTest6.totalAcctBalance()).toBe(10000);
+});
+
+test('Test for the lowest account balance', () => {
+    const controllerTest7 = new ooStuff.AcctControls();
+    
+    controllerTest7.addAcct("newAcct17", 2500);
+    controllerTest7.addAcct("newAcct18", 2000);
+    controllerTest7.addAcct("newAcct19", 3000);
+    
+    expect(controllerTest7.lowestAcctBalance()).toBe("newAcct18: $2000");
+    
+});
+
+test('Test for the highest account balance', () => {
+    const controllerTest8 = new ooStuff.AcctControls();
+    
+    controllerTest8.addAcct("newAcct20", 2500);
+    controllerTest8.addAcct("newAcct21", 2000);
+    controllerTest8.addAcct("newAcct22", 3000);
+    
+    expect(controllerTest8.highestAcctBalance()).toBe("newAcct22: $3000");
+    
 });
 
 
