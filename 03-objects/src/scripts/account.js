@@ -7,17 +7,17 @@ class Account {
         this.balance = balance;
     }
 
-    deposit(amount) {
-        this.balance += Number(amount);
+    deposit(amtDeposit) {
+        this.balance += Number(amtDeposit);
         return this.balance;
     }
 
-    withdraw(amount) {
-        this.balance -= Number(amount);
+    withdraw(amtWithdraw) {
+        this.balance -= Number(amtWithdraw);
         return this.balance;
     }
 
-    balance() {
+    acctBalance() {
         return this.balance;
     }
 
@@ -35,7 +35,7 @@ class AcctControls {
 
     balance(name) {
         let index = this.acctArray.findIndex(acctFinder => acctFinder.name === name);
-        return this.acctArray[index].balance();
+        return this.acctArray[index].balance;
     }
 
     totalAcctBalance() {

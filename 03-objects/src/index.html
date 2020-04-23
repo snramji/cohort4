@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="clStaticBox">
-            <h1>Bank Accounts</h1>
+            <h1>BankApp</h1>
             <div id="idNewAcct" class="clDivSection">
                 <span>Open New Account: </span>
                 <input placeholder="Account Name" type="text" id="idAcctName">
@@ -28,8 +28,11 @@
                 <br>
             </div>
             <br>
+        </div>
+        <br>
+        <div class="clStaticBox">
+            <h1>Account Status</h1>
             <div id="idAcctStatus" class="clDivSection">
-                <strong>Account Status</strong>
                 <br>
                 <button type="button" id="idLowestBtn" class="button">Lowest Account Balance</button>
                 <button type="button" id="idHighestBtn" class="button">Highest Account Balance</button>
@@ -43,15 +46,16 @@
         <br>
         <div class="clDynamicBox">
             <h1>Account Details</h1>
-                <div class = "clAcctCards" id = "idAcctCards">                 
-                    <strong class="cardTitle" id="cardTitle">Account Name</strong>
-                    <br><br>
-                    <strong> Current Balance: </strong>
-                    <br>
-                    <p id="idAccountStatusMsg">? ? ? </pspan>
-                    <br>
-                    <button type="button" id="idRemoveAcctButton" class="button">Remove Account</button>
-                </div>
+            <div class = "clAcctCards" id = "idAcctCards">                 
+                <strong class="cardTitle" id="cardTitle">Account Name</strong>
+                <br><br>
+                <strong> Current Balance: </strong>
+                <br>
+                <p id="idAccountStatusMsg">? ? ? </pspan>
+                <br>
+                <button type="button" id="idRemoveAcctButton" class="button">Remove Account</button>
+            </div>
         </div>
+        <br>
     </body>
     <script type="module" src="./scripts/index.js"></script>
