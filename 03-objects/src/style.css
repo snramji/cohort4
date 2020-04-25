@@ -29,7 +29,7 @@ p, span, input {
 
 .clLeftPanel {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     margin: auto;
     width: 50%;
     font-size: 1rem;
@@ -48,7 +48,7 @@ p, span, input {
 
 .clRightPanel {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     margin: auto;
     width: 50%;
     font-size: 1rem;
@@ -99,3 +99,8 @@ p, span, input {
     padding-bottom: 5px;
     line-height: 30px;
 }
+
+/* .clCardTitle {
+    text-align: center;
+    font-weight: bold;
+} */
