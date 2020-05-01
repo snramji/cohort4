@@ -1,84 +1,105 @@
 import DOMfunctions from './DOM.js';
 import ooStuff from './account.js';
 
-let acctControls = new ooStuff.acctControls();
+let AcctControls = new ooStuff.AcctControls();
 let i = 0;
 
-document.body.addEventListener("click", e => {
+document.body.addEventListener("click", (e) => {
 
     if (e.target.nodeName === 'BUTTON') {
 
         if (e.target.textContent === "Add Account") {
+          
+            const cardSection = document.getElementById("idAcctCards");
+            
+            let div = document.createElement("div");
 
-            console.log("Add Account Button Clicked");
+            cardSection.appendChild(div);
 
-            if (acctName.value.length > 0 && initDeposit.value.length > 0) {
-                AcctControls.addAcct(acctName.value, Number(initDeposit.value));
+            if (idAcctName.value.length > 0 && idInitDeposit.value.length > 0) {
+                AcctControls.addAcct(idAcctName.value, Number(idInitDeposit.value));
                 DOMfunctions.buildNewCard(idAcctCards, (AcctControls.acctArray[i]));
-                DOMfunctions.
+                DOMfunctions.attachDropDown(idDropDown, (AcctControls.acctArray[i]));
+                i++;
+                clearFields();
             }
-
-
-
-            // const cardSection = document.getElementById("idAcctCards");
-            
-            // let div = document.createElement("div");
-            // DOMfunctions.buildNewCard(div);
-            // cardSection.appendChild(div);
-            
-            
-
+                  
         } else if (e.target.textContent === "Deposit") {
 
-            console.log("Deposit Button Clicked");
-
-            // let div = document.createElement("div");
-            // buildNewCard(div);
-            // cardSection.insertBefore(div, event.target.parentNode);
+            if (lengthCheck() > 0) {
+                AcctControls.depositToAcct(idDropDown.value, Number(idAmount.value).toFixed(2));
+                updateAccounts();
+                clearFields();
+            }
 
         } else if (e.target.textContent === "Withdraw") {
 
-            console.log("Withdraw Button Clicked");
-
-            // let div = document.createElement("div");
-            // buildNewCard(div);
-            // cardSection.insertBefore(div, event.target.parentNode.nextElementSibling);
-            
+            if (lengthCheck() > 0) {
+                AcctControls.withdrawFromAcct(idDropDown.value, Number(idAmount.value).toFixed(2));
+                updateAccounts();
+                clearFields();
+            }
+                       
         } else if (e.target.textContent === "Remove Account") {
 
-            console.log("Remove Account Button Clicked");
+            AcctControls.removeAcct(event.target.parentElement.id);
+            DOMfunctions.deleteAcctCard(event.target.parentElement);
 
-            // let div = document.getElementById("idCardSection");
+            let dropDown = event.target.parentElement.id;
+
+            let counter = 0;
+            for (let n = 0; n < idDropDown.length; n++) {
+
+                if (dropDown === idDropDown[n].id) {
+                    counter = n;
+                }
+            };
+            idDropDown.removeChild(idDropDown[counter]);
+            return i--;
             
-            // div.removeChild(e.target.parentElement);
-            
+           
         } else if (e.target.textContent === "Lowest Account Balance") {
 
-            console.log("Lowest Account Balance Button Clicked");
-
-            // let div = document.getElementById("idCardSection");
+            idAccountStatusMsg.innerText = `The lowest value account and balance are ${AcctControls.lowestAcctBalance()}`;
+         
             
-            // div.removeChild(e.target.parentElement);
-           
         } else if (e.target.textContent === "Highest Account Balance") {
 
-            console.log("Highest Account Button Clicked");
-
-            // let div = document.getElementById("idCardSection");
-            
-            // div.removeChild(e.target.parentElement);
+            idAccountStatusMsg.innerText = `The highest value account and balance are ${AcctControls.highestAcctBalance()}`;
           
+
         } else if (e.target.textContent === "Total Account Balance") {
 
-            console.log("Total Account Balance Button Clicked");
-
-            // let div = document.getElementById("idCardSection");
-            
-            // div.removeChild(e.target.parentElement);
-
+            idAccountStatusMsg.innerText = `The total balance of all acounts is $${AcctControls.totalAcctBalance()}`;
 
        }
 
     }
 
 })
+
+function clearFields() {
+    idAcctName.value = "";
+    idInitDeposit.value = "";
+    idAmount.value = "";
+    idDropDown.value = "Select";
+};
+
+function lengthCheck() {
+    return idAmount.value.length;
+};
+
+function updateAccounts() {
+    let index = AcctControls.acctArray.findIndex(acctFinder => acctFinder.name === idDropDown.value);
+    let updateBalance = AcctControls.acctArray[index].name;
+    let counter = 0;
+    for (let n = 0; n < idDropDown.length; n++) {
+        
+        if (updateBalance === idDropDown[n].id) {
+            counter = n;
+        }
+    };
+    if (updateBalance === idDropDown[counter].value) {
+        document.getElementById(`idAcctCard ${updateBalance}`).textContent = "$" + AcctControls.acctArray[index].balance;
+    }
+};

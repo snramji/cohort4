@@ -10,8 +10,11 @@
                 <h1>BankApp</h1>
                 <div id="idNewAcct" class="clDivSection">
                     <span>Open New Account: </span>
-                    <input placeholder="Account Name" type="text" id="acctName">
-                    <input placeholder="Initial Deposit" type="number" id="initDeposit">
+                    <input placeholder="Account Name" type="text" id="idAcctName">
+                    <br>
+                    <span>Initial Deposit Amount: </span>
+                    <input placeholder="Initial Deposit" type="number" id="idInitDeposit">
+                    <br>
                     <button type="button" id="idAddAcctBtn" class="button">Add Account</button>
                     <br>
                 </div>
@@ -19,11 +22,13 @@
                 <div id="idUpdateAcct" class="clDivSection">
                     <strong>Banking Transactions</strong>
                     <br>
-                    Select Account to Update 
-                    <select id="dropdownID" name="dropdown">
+                    Select Account to Update: 
+                    <select id="idDropDown" name="dropdown">
                         <option selected="">Select</option>
                     </select>
-                    <input placeholder="Amount" type="number" id="amount">
+                    <br> Transaction Amount:
+                    <input placeholder="Amount" type="number" id="idAmount">
+                    <br>
                     <button type="button" id="idDepositBtn" class="button">Deposit</button>
                     <button type="button" id="idWithdrawBtn" class="button">Withdraw</button>
                     <br>
@@ -43,7 +48,7 @@
             </div>
             <div class="clRightPanel">
                 <h1>Account Details</h1>
-                <div class = "clAcctCards" id = "idAcctCards">                 
+                <div class = "clAcctCards" id = "idAcctCards">Thanks for Using BankApp. Have a Great Day!                 
                     <!-- <strong class="clCardTitle" id="cardTitle">Account Name</strong>
                     <br><br>
                     <strong> Current Balance: </strong>
