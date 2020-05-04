@@ -21,6 +21,7 @@ document.body.addEventListener("click", (e) => {
                 DOMfunctions.buildNewCard(idAcctCards, (AcctControls.acctArray[i]));
                 DOMfunctions.attachDropDown(idDropDown, (AcctControls.acctArray[i]));
                 i++;
+                idAccountStatusMsg.innerText = `The total balance of all acounts is $${AcctControls.totalAcctBalance()}`;
                 clearFields();
             }
                   
@@ -29,6 +30,7 @@ document.body.addEventListener("click", (e) => {
             if (lengthCheck() > 0) {
                 AcctControls.depositToAcct(idDropDown.value, Number(idAmount.value).toFixed(2));
                 updateAccounts();
+                idAccountStatusMsg.innerText = `The total balance of all acounts is $${AcctControls.totalAcctBalance()}`;
                 clearFields();
             }
 
@@ -37,12 +39,14 @@ document.body.addEventListener("click", (e) => {
             if (lengthCheck() > 0) {
                 AcctControls.withdrawFromAcct(idDropDown.value, Number(idAmount.value).toFixed(2));
                 updateAccounts();
+                idAccountStatusMsg.innerText = `The total balance of all acounts is $${AcctControls.totalAcctBalance()}`;
                 clearFields();
             }
                        
         } else if (e.target.textContent === "Remove Account") {
 
             AcctControls.removeAcct(event.target.parentElement.id);
+            idAccountStatusMsg.innerText = `The total balance of all acounts is $${AcctControls.totalAcctBalance()}`;
             DOMfunctions.deleteAcctCard(event.target.parentElement);
 
             let dropDown = event.target.parentElement.id;
