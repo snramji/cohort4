@@ -254,4 +254,68 @@ test('does it get all the names', () => {
         'Clementina DuBuque']);
 });
 
+test('does it give a json file', async () => {
+  const url = "https://jsonplaceholder.typicode.com/users";
+  const data = await functions.postData(url);
+  console.log(data);
+
+});
+
+const url = 'http://127.0.0.1:5000/';
+
+test('test that the fetch works?', async () => {
+
+  const clients = [
+      {key:1, name:"Shiraz"},
+      {key:2, name:"Rozy"}
+  ]
+
+  // Check that the server is running and clear any data
+  let data = await functions.postData(url + 'clear');
+
+  data = await functions.postData(url + 'all');
+  expect(data.status).toEqual(200);
+  expect(data.length).toBe(0);
+
+  data = await functions.postData(url + 'add', clients[0]);
+  expect(data.status).toEqual(200);
+
+  data = await functions.postData(url + 'all');
+  expect(data.status).toEqual(200);
+  expect(data.length).toBe(1);
+  expect(data[0].name).toBe("Shiraz");
+
+  // // add a second with the same key which should be an error
+  data = await functions.postData(url + 'add', clients[0]);
+  expect(data.status).toEqual(400);
+
+  // // add a second which should be ok
+  data = await functions.postData(url + 'add', clients[1]);
+  expect(data.status).toEqual(200);
+
+  data = await functions.postData(url + 'all');
+  expect(data.status).toEqual(200);
+  expect(data.length).toBe(2);
+  expect(data[1].name).toBe("Rozy");
+
+  data = await functions.postData(url + 'read', {key:1});
+  expect(data.status).toEqual(200);
+  expect(data.length).toBe(1);
+  expect(data[0].name).toBe("Shiraz");
+
+  data = await functions.postData(url + 'update', {key:1, name:"Zainine"});
+  expect(data.status).toEqual(200);
+
+  data = await functions.postData(url + 'read', {key:1});
+  expect(data.status).toEqual(200);
+  expect(data.length).toBe(1);
+  expect(data[0].name).toBe("Zainine");
+
+  data = await functions.postData(url + 'delete', {key:1});
+  expect(data.status).toEqual(200);
+
+  data = await functions.postData(url + 'read', {key:1});
+  expect(data.status).toEqual(400);
+});
+
 
