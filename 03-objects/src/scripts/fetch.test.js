@@ -256,7 +256,7 @@ test('does it get all the names', () => {
 
 test('does it give a json file', async () => {
   const url = "https://jsonplaceholder.typicode.com/users";
-  const data = await functions.postData(url);
+  const data = await functions.getData(url);
   console.log(data);
 
 });
